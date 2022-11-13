@@ -1,25 +1,25 @@
-public class Country {
+public class Country implements Comparable<Country> {
         private String shortcut;
-        private String country;
+        private String countryName;
         private double highTarif; //percentage
         private	double lowTarif; //percentage
         private boolean specialTarif;
 
-        public Country(String shortcut,String country,double highTarif,double lowTarif,boolean specialTarif){
+        public Country(String shortcut,String countryName,double highTarif,double lowTarif,boolean specialTarif){
             this.shortcut = shortcut;
-            this.country = country;
+            this.countryName = countryName;
             this.highTarif = highTarif;
             this.lowTarif = lowTarif;
             this.specialTarif = specialTarif;
         }
 
-        public String getInfo() {
+        public String getInfo(boolean firstListing) {
             String record;
-            record = getCountry() + " (" +
+            record = getCountryName() + " (" +
                     getShortcut() + "): " +
                     gethighTarif() + " %";
 
-            if (getSpecialTarif() == true) {
+            if (firstListing == false) {
                 record = record
                         + " (" + getLowTarif()
                         + " %)";
@@ -43,12 +43,12 @@ public class Country {
             this.shortcut = shortcut;
         }
 
-	    public String getCountry(){
-            return country;
+	    public String getCountryName(){
+            return countryName;
         }
 
-        public void setCountry(){
-            this.country = country;
+        public void setCountryName(){
+            this.countryName = countryName;
         }
 
         public double gethighTarif(){
@@ -74,4 +74,10 @@ public class Country {
         public void setSpecialTarif() {
             this.specialTarif = specialTarif;
         }
+
+   // @Override
+    public int compareTo(Country second) {
+                return this.countryName.compareTo(second.countryName);
+    }
+
 }
