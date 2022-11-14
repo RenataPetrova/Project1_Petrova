@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main{
@@ -11,5 +13,6 @@ public class Main{
         }catch(Exception ex) {
             System.err.println(ex.getLocalizedMessage());
         }
+        Collections.sort(list,Collections.reverseOrder());
     }
 }

@@ -75,9 +75,9 @@ public class Country implements Comparable<Country> {
             this.specialTarif = specialTarif;
         }
 
-   // @Override
-    public int compareTo(Country second) {
-                return this.countryName.compareTo(second.countryName);
-    }
 
+    @Override
+    public int compareTo(Country secondCountry) {
+        return Double.compare(this.highTarif,secondCountry.gethighTarif());
+    }
 }

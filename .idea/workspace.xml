@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c853311-0e8f-4456-b74f-1b3730186d46" name="Changes" comment="updated release nr.2">
-      <change afterPath="$PROJECT_DIR$/src/CountryComparator.java" afterDir="false" />
+    <list default="true" id="4c853311-0e8f-4456-b74f-1b3730186d46" name="Changes" comment="updated release nr.3&#10;1. reading of the input file is OK&#10;2. trying to setup comparator for high tarif of country">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Countries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Countries.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Country.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CountryComparator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,14 +32,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Lukas/IdeaProjects/Project1_Petrova"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lukas/IdeaProjects/Project1_Petrova&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -64,7 +64,8 @@
       <updated>1666626179420</updated>
       <workItem from="1666626182397" duration="3151000" />
       <workItem from="1668337695438" duration="1970000" />
-      <workItem from="1668339784814" duration="7797000" />
+      <workItem from="1668339784814" duration="8393000" />
+      <workItem from="1668448846815" duration="2157000" />
     </task>
     <task id="LOCAL-00001" summary="First release">
       <created>1666629191756</created>
@@ -80,7 +81,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668337743825</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="updated release nr.3&#10;1. reading of the input file is OK&#10;2. trying to setup comparator for high tarif of country">
+      <created>1668358087109</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668358087109</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,15 +108,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First release" />
     <MESSAGE value="updated release nr.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated release nr.2" />
+    <MESSAGE value="updated release nr.3&#10;1. reading of the input file is OK&#10;2. trying to setup comparator for high tarif of country" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated release nr.3&#10;1. reading of the input file is OK&#10;2. trying to setup comparator for high tarif of country" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>9</line>
-          <option name="timeStamp" value="3" />
+          <line>15</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

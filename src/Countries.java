@@ -53,10 +53,10 @@ public class Countries {
             }
         }
 
-        public void createListAboveLimit(List<Country> list){
-            list.sort();
+        //public void createListAboveLimit(List<Country> list){
+        //    list.sort();
 
-        }
+        //}
         public void openFile(List<Country> list) throws CountryException{
             File file = new File(FILENAME);
             try{
