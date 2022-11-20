@@ -13,6 +13,9 @@ public class Main{
         }catch(Exception ex) {
             System.err.println(ex.getLocalizedMessage());
         }
-        Collections.sort(list,Collections.reverseOrder());
+        countries.writeList(list,true);
+        countries.writeList(list,false);
+        countries.getSorted();
+
     }
 }

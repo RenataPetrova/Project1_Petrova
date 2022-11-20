@@ -2,17 +2,22 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 public class Countries {
         private List<Country> list;
+        private List<Country> limitList = new ArrayList<>();
         private final String FILENAME = "vat-eu.csv";
         private String[] recordSplit;
         private double highTarif;
         private	double lowTarif;
         private boolean specialTarif;
         private double defaultLimit = 20.0;
+
+
+        private String countriesUnderLimit = "Sazba VAT 20 % nebo nižší nebo používají speciální sazbu: ";
 
 
         public Countries(List<Country> list){
@@ -30,22 +35,83 @@ public class Countries {
         public Country getCountry(int index){
             return list.get(index);
         }
-        public boolean limitInputAboveTwenty(double limit){
-            boolean result = false;
-            if(limit>=defaultLimit){
-                result=true;
+
+        private void setLimit(){
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Prosim, nastav požadovaný limit:");
+            try {
+                String limit = sc.nextLine();
+
+            }catch(Exception ex){
+                System.err.println(ex.getLocalizedMessage());
             }
-            return result;
         }
 
-        public void getList(List<Country> list){
+        private double evaluateLimit(String limit){
+            double myLimit;
+            if (limit.isEmpty()){
+                myLimit = defaultLimit;
+            }else{
+                myLimit = Double.parseDouble(limit);
+            }
+            return myLimit;
+        }
+        private List<Country> chooseList(boolean firstListing){
+            List<Country> tempList = new ArrayList<>();
+            if (firstListing==false){
+                tempList = limitList;
+            }else{
+                tempList = list;
+
+            }
+            return tempList;
+        }
+        public void writeList(List<Country> list,boolean firstListing){
+            List<Country> tempList = new ArrayList<>();
+                        tempList = chooseList(firstListing);
+
+            for (Country country : tempList) {
+
+                System.out.println(country.getInfo(firstListing));
+                if (firstListing==true){
+                    fillLimitList(country);
+                }
+            }
+            String cutted = countriesUnderLimit.substring(0,countriesUnderLimit.length() - 2);   //cut last 2 digits
+            if (firstListing==true){
+                System.out.println();
+            }else{
+                for(int i = 1;i<35;i++){
+                    System.out.print("=");
+                }
+                System.out.println();
+                System.out.println(cutted);
+            }
+        }
+
+            public void getSorted(){
+                Collections.sort(limitList,Collections.reverseOrder());
+
+            }
+            public void fillLimitList(Country country){
+
+                if (country.gethighTarif()>= defaultLimit && country.getSpecialTarif()==false){
+                    limitList.add(country);
+                }else{
+                    countriesUnderLimit = countriesUnderLimit + country.getShortcut() + ", ";
+                }
+            }
+
+
+        public void createOutputList(List<Country> list){
             String recordToWrite;
+
+
             try (PrintWriter outputWriter =
                          new PrintWriter(new FileWriter(FILENAME))) {
 
                 for (Country country : list) {
                     recordToWrite = country.getInfo(true);
-
                     outputWriter.print(recordToWrite);
                 }
             } catch (Exception e) {

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c853311-0e8f-4456-b74f-1b3730186d46" name="Changes" comment="updated release nr.3&#10;1. reading of the input file is OK&#10;2. trying to setup comparator for high tarif of country">
+    <list default="true" id="4c853311-0e8f-4456-b74f-1b3730186d46" name="Changes" comment="updated release nr.4&#10;1. reading of the input file is OK - from previous release&#10;2. No comparator implemented, fixed first sorting">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Countries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Countries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Country.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CountryComparator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +63,9 @@
       <workItem from="1666626182397" duration="3151000" />
       <workItem from="1668337695438" duration="1970000" />
       <workItem from="1668339784814" duration="8393000" />
-      <workItem from="1668448846815" duration="2157000" />
+      <workItem from="1668448846815" duration="2510000" />
+      <workItem from="1668793111236" duration="6223000" />
+      <workItem from="1668882845134" duration="3700000" />
     </task>
     <task id="LOCAL-00001" summary="First release">
       <created>1666629191756</created>
@@ -88,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668358087109</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="updated release nr.4&#10;1. reading of the input file is OK - from previous release&#10;2. No comparator implemented, fixed first sorting">
+      <created>1668451318797</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668451318797</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,18 +116,10 @@
     <MESSAGE value="First release" />
     <MESSAGE value="updated release nr.2" />
     <MESSAGE value="updated release nr.3&#10;1. reading of the input file is OK&#10;2. trying to setup comparator for high tarif of country" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated release nr.3&#10;1. reading of the input file is OK&#10;2. trying to setup comparator for high tarif of country" />
+    <MESSAGE value="updated release nr.4&#10;1. reading of the input file is OK - from previous release&#10;2. No comparator implemented, fixed first sorting" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated release nr.4&#10;1. reading of the input file is OK - from previous release&#10;2. No comparator implemented, fixed first sorting" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="special.toUpperCase()" language="JAVA" />
