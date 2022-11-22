@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c853311-0e8f-4456-b74f-1b3730186d46" name="Changes" comment="updated release nr.4&#10;1. reading of the input file is OK - from previous release&#10;2. No comparator implemented, fixed first sorting">
+    <list default="true" id="4c853311-0e8f-4456-b74f-1b3730186d46" name="Changes" comment="updated release nr.6&#10;1. reading of the input file is OK - from previous release&#10;2. No comparator implemented, fixed first sorting&#10;3. Second listing finalised, also the writting on 1 line of the rest&#10;4. looping countries only once to evaluate the limit&#10;5. adding availability to input our own limit = finalised&#10;6. catched exception for reading else than number&#10;7. readinf process finalised&#10;8. need to finalize output process">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Countries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Countries.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
@@ -30,14 +30,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lukas/IdeaProjects/Project1_Petrova&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Lukas/IdeaProjects/Project1_Petrova"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -65,7 +65,9 @@
       <workItem from="1668339784814" duration="8393000" />
       <workItem from="1668448846815" duration="2510000" />
       <workItem from="1668793111236" duration="6223000" />
-      <workItem from="1668882845134" duration="3700000" />
+      <workItem from="1668882845134" duration="10115000" />
+      <workItem from="1668942795296" duration="2312000" />
+      <workItem from="1669134732821" duration="6054000" />
     </task>
     <task id="LOCAL-00001" summary="First release">
       <created>1666629191756</created>
@@ -95,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668451318797</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="updated release nr.5&#10;1. reading of the input file is OK - from previous release&#10;2. No comparator implemented, fixed first sorting&#10;3. Second listing finalised, also the writting on 1 line of the rest&#10;4. looping countries only once to evaluate the limit&#10;5. adding availability to input our own limit, not finalised&#10;6. not catched exception for reading else than number">
+      <created>1668936593289</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1668936593289</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,9 +126,24 @@
     <MESSAGE value="updated release nr.2" />
     <MESSAGE value="updated release nr.3&#10;1. reading of the input file is OK&#10;2. trying to setup comparator for high tarif of country" />
     <MESSAGE value="updated release nr.4&#10;1. reading of the input file is OK - from previous release&#10;2. No comparator implemented, fixed first sorting" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated release nr.4&#10;1. reading of the input file is OK - from previous release&#10;2. No comparator implemented, fixed first sorting" />
+    <MESSAGE value="updated release nr.5&#10;1. reading of the input file is OK - from previous release&#10;2. No comparator implemented, fixed first sorting&#10;3. Second listing finalised, also the writting on 1 line of the rest&#10;4. looping countries only once to evaluate the limit&#10;5. adding availability to input our own limit, not finalised&#10;6. not catched exception for reading else than number" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated release nr.5&#10;1. reading of the input file is OK - from previous release&#10;2. No comparator implemented, fixed first sorting&#10;3. Second listing finalised, also the writting on 1 line of the rest&#10;4. looping countries only once to evaluate the limit&#10;5. adding availability to input our own limit, not finalised&#10;6. not catched exception for reading else than number" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Countries.java</url>
+          <line>108</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Countries.java</url>
+          <line>115</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="special.toUpperCase()" language="JAVA" />
@@ -127,5 +151,8 @@
         <watch expression="special.toUpperCase() == &quot;TRUE&quot;" language="JAVA" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Project1_Petrova$Main.ic" NAME="Main Coverage Results" MODIFIED="1668939015845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

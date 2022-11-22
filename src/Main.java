@@ -14,7 +14,8 @@ public class Main{
             System.err.println(ex.getLocalizedMessage());
         }
         countries.writeList(list,true);
-        countries.writeList(list,false);
+        countries.writeNewData(countries.writeList(list,false));
+        //countries.writeList(list,false);
         countries.getSorted();
 
     }

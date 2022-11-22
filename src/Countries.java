@@ -1,3 +1,4 @@
+import javax.naming.LimitExceededException;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
@@ -10,14 +11,17 @@ public class Countries {
         private List<Country> list;
         private List<Country> limitList = new ArrayList<>();
         private final String FILENAME = "vat-eu.csv";
+        private String OUTPUTFILE = "vat-over-";
+        private final String suffix = ".txt";
         private String[] recordSplit;
         private double highTarif;
         private	double lowTarif;
         private boolean specialTarif;
         private double defaultLimit = 20.0;
+        private boolean rightInput = false;
+       // private PrintWriter outputWriter;
 
-
-        private String countriesUnderLimit = "Sazba VAT 20 % nebo nižší nebo používají speciální sazbu: ";
+        private String countriesUnderLimit = "Sazba VAT ";
 
 
         public Countries(List<Country> list){
@@ -36,26 +40,45 @@ public class Countries {
             return list.get(index);
         }
 
-        private void setLimit(){
-            Scanner sc = new Scanner(System.in);
-            System.out.print("Prosim, nastav požadovaný limit:");
-            try {
-                String limit = sc.nextLine();
+        private double setLimit(){
+            double finalLimit = 0;
 
-            }catch(Exception ex){
-                System.err.println(ex.getLocalizedMessage());
+
+            while(rightInput == false) {
+                System.out.println("Prosim, nastav požadovaný limit ve formatu cisla:");
+                Scanner sc = new Scanner(System.in);
+                String limit = sc.nextLine();
+                try {
+                    finalLimit = evaluateLimit(limit);
+                    rightInput = true;
+                }catch(Exception ex){
+
+                }
             }
+            return finalLimit;
         }
 
-        private double evaluateLimit(String limit){
+        private double evaluateLimit(String limit) throws CountryException{
             double myLimit;
             if (limit.isEmpty()){
                 myLimit = defaultLimit;
             }else{
-                myLimit = Double.parseDouble(limit);
+                try {
+                    myLimit = Double.parseDouble(limit);
+                }catch(Exception ex){
+                    throw new CountryException("Vlozena hodnota neni cislo.");
+                }
             }
             return myLimit;
         }
+
+        private void getOutputFileName(double limit){
+
+
+            OUTPUTFILE = OUTPUTFILE + limit + suffix;
+
+        }
+
         private List<Country> chooseList(boolean firstListing){
             List<Country> tempList = new ArrayList<>();
             if (firstListing==false){
@@ -66,20 +89,35 @@ public class Countries {
             }
             return tempList;
         }
-        public void writeList(List<Country> list,boolean firstListing){
+        public List<Country> writeList(List<Country> list,boolean firstListing){
+            String recordToWrite;
             List<Country> tempList = new ArrayList<>();
                         tempList = chooseList(firstListing);
+            double limit = setLimit();
 
-            for (Country country : tempList) {
-
-                System.out.println(country.getInfo(firstListing));
-                if (firstListing==true){
-                    fillLimitList(country);
-                }
+            if (firstListing == true) {
+                countriesUnderLimit = countriesUnderLimit + limit + " % nebo nižší nebo používají speciální sazbu: ";
+                getOutputFileName(limit);
             }
+       //     try (PrintWriter outputWriter = new PrintWriter(new FileWriter(OUTPUTFILE))){
+
+                for (Country country : tempList) {
+
+                    System.out.println(country.getInfo(firstListing));
+                    if (firstListing == true) {
+                        recordToWrite = fillLimitList(country, limit);
+     //                   outputWriter.print(recordToWrite + "\n");
+                        //outputWriter.print("ahoj" + "\n");
+                    }
+                }
+         //   }catch(Exception ex){
+         //           ex.printStackTrace();
+         //   }
             String cutted = countriesUnderLimit.substring(0,countriesUnderLimit.length() - 2);   //cut last 2 digits
+
             if (firstListing==true){
                 System.out.println();
+                countriesUnderLimit = cutted;
             }else{
                 for(int i = 1;i<35;i++){
                     System.out.print("=");
@@ -87,42 +125,51 @@ public class Countries {
                 System.out.println();
                 System.out.println(cutted);
             }
+            return tempList;
         }
 
             public void getSorted(){
                 Collections.sort(limitList,Collections.reverseOrder());
 
             }
-            public void fillLimitList(Country country){
+            public String fillLimitList(Country country, double limit){
+            String blank = "";
 
-                if (country.gethighTarif()>= defaultLimit && country.getSpecialTarif()==false){
-                    limitList.add(country);
+
+            if (country.gethighTarif()>= limit && country.getSpecialTarif()==false){
+
+                        limitList.add(country);
+                        String recordToWrite = country.getInfo(false);
+                        return recordToWrite;
+
+
                 }else{
+
                     countriesUnderLimit = countriesUnderLimit + country.getShortcut() + ", ";
+                    return blank;
                 }
             }
+    public void writeNewData(List<Country> list){
+        String recordToWrite;
+        try (PrintWriter outputWriter =
+                     new PrintWriter(new FileWriter(OUTPUTFILE))) {
+
+            for (Country country : list) {
+                recordToWrite = country.getInfo(false);
+                recordToWrite = recordToWrite + "\n";
 
 
-        public void createOutputList(List<Country> list){
-            String recordToWrite;
-
-
-            try (PrintWriter outputWriter =
-                         new PrintWriter(new FileWriter(FILENAME))) {
-
-                for (Country country : list) {
-                    recordToWrite = country.getInfo(true);
-                    outputWriter.print(recordToWrite);
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
+                outputWriter.print(recordToWrite);
             }
+            for(int i = 1;i<35;i++){
+                outputWriter.print("=");
+            }
+            outputWriter.print("\n");
+            outputWriter.print(countriesUnderLimit);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
-        //public void createListAboveLimit(List<Country> list){
-        //    list.sort();
-
-        //}
+    }
         public void openFile(List<Country> list) throws CountryException{
             File file = new File(FILENAME);
             try{
