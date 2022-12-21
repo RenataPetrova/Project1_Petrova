@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c853311-0e8f-4456-b74f-1b3730186d46" name="Changes" comment="updated release nr.6&#10;1. reading of the input file is OK - from previous release&#10;2. No comparator implemented, fixed first sorting&#10;3. Second listing finalised, also the writting on 1 line of the rest&#10;4. looping countries only once to evaluate the limit&#10;5. adding availability to input our own limit = finalised&#10;6. catched exception for reading else than number&#10;7. readinf process finalised&#10;8. need to finalize output process">
+    <list default="true" id="4c853311-0e8f-4456-b74f-1b3730186d46" name="Changes" comment="updated release nr.6&#10;1. reading of the input file is OK - from previous release&#10;2. No comparator implemented, fixed first sorting&#10;3. Second listing finalised, also the writting on 1 line of the rest&#10;4. looping countries only once to evaluate the limit&#10;5. adding availability to input our own limit = finalised&#10;6. catched exception for reading else than number&#10;7. reading process finalised&#10;8. output process finalised&#10;9. need to optimilize code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Countries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Countries.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Country.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CountryException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CountryException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,14 +32,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Lukas/IdeaProjects/Project1_Petrova"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lukas/IdeaProjects/Project1_Petrova&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -67,7 +69,8 @@
       <workItem from="1668793111236" duration="6223000" />
       <workItem from="1668882845134" duration="10115000" />
       <workItem from="1668942795296" duration="2312000" />
-      <workItem from="1669134732821" duration="6054000" />
+      <workItem from="1669134732821" duration="6266000" />
+      <workItem from="1671632241473" duration="845000" />
     </task>
     <task id="LOCAL-00001" summary="First release">
       <created>1666629191756</created>
@@ -104,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668936593289</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="updated release nr.6&#10;1. reading of the input file is OK - from previous release&#10;2. No comparator implemented, fixed first sorting&#10;3. Second listing finalised, also the writting on 1 line of the rest&#10;4. looping countries only once to evaluate the limit&#10;5. adding availability to input our own limit = finalised&#10;6. catched exception for reading else than number&#10;7. reading process finalised&#10;8. output process finalised&#10;9. need to optimilize code">
+      <created>1669140997240</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1669140997240</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,19 +137,20 @@
     <MESSAGE value="updated release nr.3&#10;1. reading of the input file is OK&#10;2. trying to setup comparator for high tarif of country" />
     <MESSAGE value="updated release nr.4&#10;1. reading of the input file is OK - from previous release&#10;2. No comparator implemented, fixed first sorting" />
     <MESSAGE value="updated release nr.5&#10;1. reading of the input file is OK - from previous release&#10;2. No comparator implemented, fixed first sorting&#10;3. Second listing finalised, also the writting on 1 line of the rest&#10;4. looping countries only once to evaluate the limit&#10;5. adding availability to input our own limit, not finalised&#10;6. not catched exception for reading else than number" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated release nr.5&#10;1. reading of the input file is OK - from previous release&#10;2. No comparator implemented, fixed first sorting&#10;3. Second listing finalised, also the writting on 1 line of the rest&#10;4. looping countries only once to evaluate the limit&#10;5. adding availability to input our own limit, not finalised&#10;6. not catched exception for reading else than number" />
+    <MESSAGE value="updated release nr.6&#10;1. reading of the input file is OK - from previous release&#10;2. No comparator implemented, fixed first sorting&#10;3. Second listing finalised, also the writting on 1 line of the rest&#10;4. looping countries only once to evaluate the limit&#10;5. adding availability to input our own limit = finalised&#10;6. catched exception for reading else than number&#10;7. reading process finalised&#10;8. output process finalised&#10;9. need to optimilize code" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated release nr.6&#10;1. reading of the input file is OK - from previous release&#10;2. No comparator implemented, fixed first sorting&#10;3. Second listing finalised, also the writting on 1 line of the rest&#10;4. looping countries only once to evaluate the limit&#10;5. adding availability to input our own limit = finalised&#10;6. catched exception for reading else than number&#10;7. reading process finalised&#10;8. output process finalised&#10;9. need to optimilize code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Countries.java</url>
-          <line>108</line>
+          <line>140</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Countries.java</url>
-          <line>115</line>
+          <line>144</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
